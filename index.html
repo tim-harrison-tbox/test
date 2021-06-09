@@ -17,7 +17,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   
   <h1>Test site</h1>
   
-
+  
+  <script>
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+ 'event': 'new_subscriber',
+ 'formLocation': 'footer'
+ });
+</script>
+  
 <script>
 window.dataLayer = window.dataLayer || [];
 window.dataLayer.push({
@@ -26,8 +34,8 @@ window.dataLayer.push({
 'campaign':'campaign1', 
 'transaction_id':'123456', 
 'payment_type':'Single',
-'amount':'',
-'gift_aid_declaration': 'True',
+'amount':'10',
+'gift_aid_declaration': True,
 'payment_method':'Credit card',
 'currency_code': 'GBP'
 }
@@ -43,13 +51,13 @@ window.dataLayer.push({
 'campaign':'campaign2', 
 'transaction_id':'123456',
 'payment_type':'Regular',
-'amount':'',
-'gift_aid_declaration': 'True',
+'amount':'5',
+'gift_aid_declaration': True,
 'payment_method':'Credit card',
 'currency_code': 'GBP'
 }
 });
-</script>
+<script>
 
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -59,13 +67,13 @@ window.dataLayer.push({
 'campaign':'campaign3', 
 'transaction_id':'123456',
 'payment_type':'Transaction fee',
-'amount':'',
-'gift_aid_declaration': 'True',
+'amount':'3',
+'gift_aid_declaration': True,
 'payment_method':'Credit card',
 'currency_code': 'GBP'
 }
 });
-</script>
+<script>
 
 </body>
 
