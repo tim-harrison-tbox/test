@@ -26,13 +26,19 @@ window.dataLayer.push({
  });
 </script>
   
+  <script>
+    const now = Date.now();
+  </script>
+  
 <script>
+  
+  
 window.dataLayer = window.dataLayer || [];
 window.dataLayer.push({
 'event':'ecommerce',
 'transaction': {
 'campaign':'campaign1', 
-'transaction_id':'123456', 
+'transaction_id':now.toString(), 
 'payment_type':'Single',
 'amount': 10,
 'gift_aid_declaration': 'True',
@@ -49,7 +55,7 @@ window.dataLayer.push({
  'event': 'ecommerce',
 'transaction': {
 'campaign':'campaign2', 
-'transaction_id':'123456',
+'transaction_id':now.toString(),
 'payment_type':'Regular',
 'amount': 5,
 'gift_aid_declaration': 'True',
@@ -65,7 +71,7 @@ window.dataLayer.push({
 'event':'ecommerce',
 'transaction': {
 'campaign':'campaign3', 
-'transaction_id':'123456',
+'transaction_id':now.toString(),
 'payment_type':'Transaction fee',
 'amount': 3,
 'gift_aid_declaration': 'True',
