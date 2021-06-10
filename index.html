@@ -30,57 +30,75 @@ window.dataLayer.push({
     const now = Date.now();
   </script>
   
+
+
 <script>
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+        'ecommerce': {
+            'purchase': {
+                'actionField': {
+                    'id': now.toString(), // Transaction ID for transaction - must be unique and taken from payment provider transaction ID if possible
+                    'affiliation': '',
+                    //Revenue = Total revenue based on total value of all donation products and transaction fee
+                    'revenue': '16.50',
+                    'tax': '',
+                    'shipping': '',
+                    'coupon': ''
+                },
+
+                'products': [{ // List of productFieldObjects.
+                    //Transaction fee (if applicable)
+                    'name': 'Transaction Fee Cover',
+                    //ID that is currently passed for transaction fee cover ('1225')
+                    'id': '1225',
+                    //Individual transaction fee amount
+                    'price': '1.50',
+                    //Fund that this payment relates to
+                    'brand': 'Zakat',
+                    //Donation type that this fee relates to + ' - Transaction Fee'
+                    'category': 'Regular Donation - Transaction Fee',
+                    //Should default to 'Gift aid not applicable'
+                    'variant': 'Gift aid not applicable',
+                    //If a visitor makes more than one of the same transaction fee payments using the exact same values then increment by 1, otherwise create a new product object
+                    'quantity': 1
+                }, {
+                    //If a regular or monthly donation then 'name' = the fund that has been selected for that donation
+                    'name': 'Sadaqah',
+                    //Use current ID value that is used for the fund
+                    'id': '1128',
+                    //Individual donation amount
+                    'price': '10',
+                    //Fund that this payment relates to
+                    'brand': 'Sadaqah',
+                    //Type of donation e.g 'Monthly Donation' or 'Regular Donation'
+                    'category': 'Monthly Donation',
+                    //Either 'Gift aid selected' or 'Gift aid not selected'
+                    'variant': 'Gift aid selected',
+                    //If a visitor makes more than one of the same donation using the exact same values then increment by 1, otherwise create a new product object
+                    'quantity': 1
+                }, {
+                    //If a regular or monthly donation then 'name' = the fund that has been selected for that donation
+                    'name': 'Zakat',
+                    //Use current ID value that is used for the fund
+                    'id': '1201',
+                    //Individual donation amount
+                    'price': '5',
+                    //Fund that this payment relates to
+                    'brand': 'Zakat',
+                    //Type of donation e.g 'Monthly Donation' or 'Regular Donation'                    
+                    'category': 'Regular Donation',
+                    //Either 'Gift aid selected' or 'Gift aid not selected'
+                    'variant': 'Gift aid selected',
+                    //If a visitor makes more than one of the same donation using the exact same values then increment by 1, otherwise create a new product object
+                    'quantity': 1
+                }]
+            }
+        }
+    });
+</script>  
   
   
-window.dataLayer = window.dataLayer || [];
-window.dataLayer.push({
-'event':'ecommerce',
-'transaction': {
-'campaign':'campaign1', 
-'transaction_id':now.toString(), 
-'payment_type':'Single',
-'amount': 10,
-'gift_aid_declaration': 'True',
-'payment_method':'Credit card',
-'currency_code': 'GBP'
-}
-});
-</script>
-
-
-<script>
-window.dataLayer = window.dataLayer || [];
-window.dataLayer.push({
- 'event': 'ecommerce',
-'transaction': {
-'campaign':'campaign2', 
-'transaction_id':now.toString(),
-'payment_type':'Regular',
-'amount': 5,
-'gift_aid_declaration': 'True',
-'payment_method':'Credit card',
-'currency_code': 'GBP'
-}
-});
-</script>
-
-<script>
-window.dataLayer = window.dataLayer || [];
-window.dataLayer.push({
-'event':'ecommerce',
-'transaction': {
-'campaign':'campaign3', 
-'transaction_id':now.toString(),
-'payment_type':'Transaction fee',
-'amount': 3,
-'gift_aid_declaration': 'True',
-'payment_method':'Credit card',
-'currency_code': 'GBP'
-}
-});
-</script>
-
 </body>
 
 
